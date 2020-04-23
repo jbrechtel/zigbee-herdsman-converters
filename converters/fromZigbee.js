@@ -4629,6 +4629,18 @@ const converters = {
         },
     },
 
+    linkind_occupancy: {
+        cluster: 'ssIasZone',
+        type: ['commandStatusChangeNotification'],
+        convert: (model, msg, publish, options, meta) => {
+            const hasOccupancy = 53;
+
+            if (msg.data.hasOwnProperty('zonestatus')) {
+              return {occupancy: msg.data.zonestatus === hasOccupancy};
+            }
+        },
+    },
+
     // Ignore converters (these message dont need parsing).
     ignore_onoff_report: {
         cluster: 'genOnOff',

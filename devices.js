@@ -9249,6 +9249,14 @@ const devices = [
         description: 'Zigbee A60 filament bulb 6.3W',
         extend: generic.light_onoff_brightness,
     },
+    {
+        zigbeeModel: ['ZB-MotionSensor-D0003'],
+        model: 'ZS1100400-IN-V1A02',
+        vendor: 'Linkind',
+        description: 'PIR Motion Sensor, Wireless Motion Detector',
+        supports: 'occupancy',
+        fromZigbee: [fz.linkind_occupancy],
+    },
 
     // BlitzWolf
     {
